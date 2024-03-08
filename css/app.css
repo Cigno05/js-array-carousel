@@ -21,6 +21,11 @@
 
 .item {
     height: 70vh;
+    display: none;
+}
+
+.visual {
+    display: block;
 }
 
 
