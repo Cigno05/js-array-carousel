@@ -16,7 +16,8 @@ slidesConteinerElement = document.getElementById('slides-container');
 let slideItem = ''; //variabile fuori al for
 
 for (let index = 0; index < slidesArray.length; index++) {
-    //console.log(slidesArray[index]);
+    // console.log(slidesArray[index]); 
+    
 
     const slideSrc = slidesArray[index];
 
@@ -44,6 +45,45 @@ const firstItemElement = divItem[itemVisualindex]; //element
 //aggiungo la classe "visual" all'elemento che voglio visualizzare
 divItem[itemVisualindex].classList.add('visual')
 
+
+
+//recupero il pulsante next per scorrere le slides verso giù
+const next = document.querySelector('.next');
+
+//aggiungo il click al pulsante
+
+next.addEventListener('click', function (){
+    //console.log('prova click')
+
+   //eliminare classe "visual" dall'elemento che si vede adesso
+   divItem[itemVisualindex].classList.remove('visual');
+
+   //incremento di 1 il valore a "itemVisualIndex"
+   itemVisualindex += 1;
+
+   //assegno la classe "visual" all'elemento successivo
+   divItem[itemVisualindex].classList.add('visual')
+   console.log(itemVisualindex)
+})
+
+//recupero il pulsante precedent per scorrere le slides verso giù
+const precedent = document.querySelector('.precedent');
+
+//aggiungo il click al pulsante
+
+precedent.addEventListener('click', function (){
+    //console.log('prova click')
+
+   //eliminare classe "visual" dall'elemento che si vede adesso
+   divItem[itemVisualindex].classList.remove('visual');
+
+   //incremento di 1 il valore a "itemVisualIndex"
+   itemVisualindex -= 1;
+
+   //assegno la classe "visual" all'elemento successivo
+   divItem[itemVisualindex].classList.add('visual')
+   console.log(itemVisualindex)
+})
 
 
 
